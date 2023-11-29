@@ -24,7 +24,10 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const typeNum = (arr) => {
-  // Solution code here...
+  let filterArray = arr.filter((num) => {
+    return typeof num === 'number';
+  });
+  return filterArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -36,8 +39,12 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 ------------------------------------------------------------------------------------------------ */
 
 const containsAnd = (arr) => {
-  // Solution code here...
+  let filterArray = arr.filter((string) => {
+    return string.includes('and');
+  });
+  return filterArray;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -48,7 +55,10 @@ For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const oddValues = (arr) => {
-  // Solution code here...
+  let filterArray = arr.filter((num) => {
+    return (num % 2);
+  });
+  return filterArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
