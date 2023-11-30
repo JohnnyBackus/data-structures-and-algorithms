@@ -33,22 +33,23 @@ Ensure that the original people, stuff, and state are unchanged.
 ------------------------------------------------------------------------------------------------ */
 
 const addPeople = (arr) => {
-  let newPeople = [...arr];
-  newPeople = ['Odie', ...arr, 'Garfield'];
+  let newPeople = [...people];
+  newPeople = ['Odie', ...people, 'Garfield'];
   console.log('original people array:' , arr);
-  let newStuff = {...stuff, cars: ['Toyota', 'Mazda', 'Chevy']};
-  const state = {
-    people: people,
-    stuff: stuff};
-  let newState = {
-    newPeople: ['Odie', ...arr, 'Garfield'],
-    newStuff: {...obj, cars: ['Toyota', 'Mazda', 'Chevy']}
-  };
-  console.log('The original people array is still: ' , arr);
-  console.log('The original stuff object is still: ' , obj);
-  console.log('The original state object is still: ' , state);
-};
+  // let newStuff = {...stuff, cars: ['Toyota', 'Mazda', 'Chevy']};
+  // const state = {
+  //   people: people,
+  //   stuff: stuff};
+  // let newState = {
+  //   newPeople: ['Odie', ...people, 'Garfield'],
+  //   newStuff: {...stuff, cars: ['Toyota', 'Mazda', 'Chevy']}
+  // };
+  // console.log('The original people array is still: ' , people);
+  // console.log('The original stuff object is still: ' , stuff);
+  // console.log('The original state object is still: ' , state);
 
+  return newPeople
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -65,8 +66,17 @@ Prove that the original people, stuff, and state are unchanged.
 ------------------------------------------------------------------------------------------------ */
 
 const setState = (arr) => {
-  // Solution code here...
-};
+    let state = {
+    people: {...people},
+    stuff: {...stuff},
+    };
+    let newState = {
+      newPeople: ['Odie', ...people, 'Garfield'],
+      newStuff: {...stuff, cars: ['Toyota', 'Mazda', 'Chevy']}
+    };
+  return newState;
+  };
+
 
 
 /* ------------------------------------------------------------------------------------------------
