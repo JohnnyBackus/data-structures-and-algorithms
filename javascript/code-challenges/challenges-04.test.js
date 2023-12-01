@@ -35,7 +35,7 @@ Ensure that the original people, stuff, and state are unchanged.
 const addPeople = (arr) => {
   let newPeople = [...people];
   newPeople = ['Odie', ...people, 'Garfield'];
-  console.log('original people array:' , arr);
+  // console.log('original people array:' , people);
   // let newStuff = {...stuff, cars: ['Toyota', 'Mazda', 'Chevy']};
   // const state = {
   //   people: people,
@@ -67,14 +67,14 @@ Prove that the original people, stuff, and state are unchanged.
 
 const setState = (arr) => {
     let state = {
-    people: {...people},
+    people: [...people],
     stuff: {...stuff},
     };
-    let newState = {
-      newPeople: ['Odie', ...people, 'Garfield'],
-      newStuff: {...stuff, cars: ['Toyota', 'Mazda', 'Chevy']}
-    };
-  return newState;
+    // let newState = {
+    //   newPeople: ['Odie', ...people, 'Garfield'],
+    //   newStuff: {...stuff, cars: ['Toyota', 'Mazda', 'Chevy']}
+    // };
+  return state;
   };
 
 
@@ -95,8 +95,12 @@ Ensure that the original people array and stuff objects are unchanged
 ------------------------------------------------------------------------------------------------ */
 
 const newState = (arr) => {
-  // Solution code here...
-};
+  let newestState = {
+    newPeople: [...people],
+    newStuff: {...stuff, toys: 58, toothbrush: 'brand new', cars: [...stuff.cars, 'Ford']}
+  };
+  return newestState;
+}
 
 
 /* ------------------------------------------------------------------------------------------------
