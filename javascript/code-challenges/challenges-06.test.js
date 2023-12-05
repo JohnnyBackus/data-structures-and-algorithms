@@ -126,13 +126,14 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   let starwarsNames = [];
-  starwarsNames.push(arr.reduce( function(accumulator,value,idx) {
+  let starwarsName = arr.reduce ( function(accumulator,value,idx) {
     accumulator = accumulator.name;
+    starwarsName.push(starwarsName).re
     return accumulator;
   }, ''));
   return starwarsNames;
 };
-
+// return arr.reduce((names, character) => [...names, character.name], []);
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
