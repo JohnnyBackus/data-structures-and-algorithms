@@ -125,13 +125,13 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-  let starwarsNames = [];
-  let starwarsName = arr.reduce ( function(accumulator,value,idx) {
-    accumulator = accumulator.name;
-    starwarsName.push(starwarsName).re
-    return accumulator;
-  }, ''));
-  return starwarsNames;
+  // let starwarsNames = [];
+  // let starwarsName = arr.reduce ( function(accumulator,value,idx) {
+  //   accumulator = accumulator.name;
+  //   starwarsName.push(starwarsName).re
+  //   return accumulator;
+  // }, '');
+  // return starwarsNames;
 };
 // return arr.reduce((names, character) => [...names, character.name], []);
 /* ------------------------------------------------------------------------------------------------
