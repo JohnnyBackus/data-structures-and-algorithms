@@ -129,14 +129,14 @@ const gruffaloCrumble = {
 };
 
 
-const listFoods = (recipe) => {
-  let result = [];
-  let ingredientList = recipe.ingredients;
-  let ingredients = [];
-  for (
-    // I know I need to find the index of the ingredients and slice them off the indgredientList.. not sure how just yet
-  return result;
-};
+// const listFoods = (recipe) => {
+//   let result = [];
+//   let ingredientList = recipe.ingredients;
+//   let ingredients = [];
+//   for (
+//     // I know I need to find the index of the ingredients and slice them off the indgredientList.. not sure how just yet
+//   return result;
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
