@@ -3,7 +3,8 @@
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-![WhiteboardImage]("White Board.png")
+![Alt text](image_path)
+![Whiteboard](whiteboard.png)
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
