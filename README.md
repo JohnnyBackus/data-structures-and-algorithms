@@ -4,7 +4,9 @@ See [setup instructions](https://codefellows.github.io/setup-guide/code-301/2-co
 
 ## Table of Contents
 
-- [Array...]
+### Code Challenge README files
+
+- [Array-Reverse](python/code_challenges/array_reverse/README.md)
 
 ## Repository Quick Tour and Usage
 
