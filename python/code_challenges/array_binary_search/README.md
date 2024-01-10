@@ -37,5 +37,4 @@ Write a function called BinarySearch which takes in 2 parameters: a sorted list 
     elif list[mid] < search_key:
       start = mid + 1
     else:
-      end = mid - 1
-  return -1```
+      end = mid - 1```
