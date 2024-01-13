@@ -20,25 +20,55 @@
 
 ## Whiteboard Process
 
-<![Whiteboard Solution]()
+- not applicable for this code challenge
 
 ## Approach & Efficiency
 
 **What approach did you take? Why?**
 
->*Answer*
+>*not applicable; follow python rules for creating Node and LinkedList objects.*
 
 **What is the Big O space/time for this approach?**
 
->*Answer*
+>*not applicable*
 
 ## Resources
 
 - [CodeFellows Technical Whiteboarding Guidelines](https://codefellows.github.io/common_curriculum/challenges/code/whiteboarding)
 
-- [Chat GPT chat] ()
+- Received help from TAs Kjell and Tammy regarding understanding of terminology and verifying sample tests met requirements of code challenge (vs needing to write some of our own tests)
 
 ## Solution
 
-```def linked_list():
+```class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+class LinkedList:
+    def __init__(self, head=None):
+        self.head = head
+
+    def insert(self, value):
+        node = Node(value)
+        node.next = self.head
+        self.head = node
+
+    def includes(self, value):
+        current = self.head
+        while current:
+            if current.value == value:
+                return True
+            current = current.next
+        return False
+
+    def __str__(self):
+        output = ''
+        current = self.head
+        while current:
+            output += f'{{ {current.value} }} -> '
+            current = current.next
+        output += 'NULL'
+        return output
+
     return pass```
