@@ -29,7 +29,18 @@ class LinkedList:
         output += 'NULL'
         return output
 
-Node("apple")
-Node("banana")
-print(Node("apple"))
-print(Node("banana"))
+# ------------ Code below was used to help me visualize node and linked list ------------
+
+# Node("apple")
+# Node("banana")
+# print(Node("apple"))
+# print(Node("banana"))
+
+# def string_double():
+#     linked_list = LinkedList()
+#     linked_list.insert("apple")
+#     print(str(linked_list))
+#     linked_list.insert("banana")
+#     print(str(linked_list))
+
+# string_double()
