@@ -10,6 +10,7 @@ See [setup instructions](https://codefellows.github.io/setup-guide/code-301/2-co
 - [Array-Insert-Shift](python/code_challenges/array_insert_shift/README.md)
 - [Array-Binary-Search](python/code_challenges/array_binary_search/README.md)
 - [Linked-List-Implementation](python/code_challenges/linked_list_implementation/README.md)
+- [Linked-List-Insertions](python/code_challenges/linked_list_insertions/README.md)
 
 ## Repository Quick Tour and Usage
 
