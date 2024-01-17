@@ -20,6 +20,38 @@ class LinkedList:
             current = current.next
         return False
 
+    def append(self, value):
+        node = Node(value)
+        if not self.head:
+            self.head = node
+            return
+        current = self.head
+        while current.next:
+            current = current.next
+        current.next = node
+
+    def insert_before(self, value, new_value):
+        node = Node(new_value)
+        if not self.head:
+            self.head = node
+            return
+        current = self.head
+        while current.next.value != value:
+            current = current.next
+        node.next = current.next
+        current.next = node
+
+    def insert_after(self, value, new_value):
+        node = Node(new_value)
+        if not self.head:
+            self.head = node
+            return
+        current = self.head
+        while current.value != value:
+            current = current.next
+        node.next = current.next
+        current.next = node
+
     def __str__(self):
         output = ''
         current = self.head
