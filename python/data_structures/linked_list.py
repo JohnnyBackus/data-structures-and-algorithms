@@ -54,16 +54,22 @@ class LinkedList:
 
     def kth_from_end(self, k):
         if k < 0:
-            raise TargetError("Target must be a positive integer")
+            raise TargetError(Exception("k cannot be a negative integer"))
         current = self.head
         count = 0
+        last_value = 0
         while current:
             count += 1
+            last_value = current.value
             current = current.next
-        if k > count:
-            raise TargetError("Target is out of range")
+        if k == 0:
+            return last_value
+        if k == (count - 1): # Where k is one less than the length of the list
+            return self.head.value
+        if k > (count - 1):
+            raise TargetError(Exception("k is equal to or greater than the length of the linked list"))
         current = self.head
-        for i in range(count - k -1):
+        for i in range(count - (k + 1)): # +1 needed to account for range starting at 0
             current = current.next
         return current.value
 
@@ -93,5 +99,5 @@ class LinkedList:
 # string_double()
 
 
-class TargetError:
+class TargetError(BaseException):
     pass

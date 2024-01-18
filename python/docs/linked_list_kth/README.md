@@ -29,39 +29,28 @@ Extending an implementation of a linked list to find the kth value from the end 
 
 - [CodeFellows Technical Whiteboarding Guidelines](https://codefellows.github.io/common_curriculum/challenges/code/whiteboarding)
 
-- used GitHub copilot for prompting on syntax for methods.
+- used GitHub copilot for prompting on syntax and how to use TargetError. Also prompted use of for i in range loop.
 
 ## Solution
 
-```def append(self, value):
-        node = Node(value)
-        if not self.head:
-            self.head = node
-            return
-        current = self.head
-        while current.next:
-            current = current.next
-        current.next = node
-
-    def insert_before(self, value, new_value):
-        node = Node(new_value)
-        if not self.head:
-            self.head = node
-            return
-        current = self.head
-        while current.next.value != value:
-            current = current.next
-        node.next = current.next
-        current.next = node
-
-    def insert_after(self, value, new_value):
-        node = Node(new_value)
-        if not self.head:
-            self.head = node
-            return
-        current = self.head
-        while current.value != value:
-            current = current.next
-        node.next = current.next
-        current.next = node
-        ```
+```def kth_from_end(self, k):
+  if k < 0:
+      raise TargetError(Exception("k cannot be a negative integer"))
+  current = self.head
+  count = 0
+  last_value = 0
+  while current:
+      count += 1
+      last_value = current.value
+      current = current.next
+  if k == 0:
+      return last_value
+  if k == (count - 1): # Where k is one less than the length of the list
+      return self.head.value
+  if k > (count - 1):
+      raise TargetError(Exception("k is equal to or greater than the length of the linked list"))
+  current = self.head
+  for i in range(count - (k + 1)): # +1 needed to account for range starting at 0
+      current = current.next
+  return current.value
+  ```
