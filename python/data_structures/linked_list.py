@@ -56,20 +56,20 @@ class LinkedList:
         if k < 0:
             raise TargetError(Exception("k cannot be a negative integer"))
         current = self.head
-        count = 0
+        node_count = 0
         last_value = 0
         while current:
-            count += 1
+            node_count += 1
             last_value = current.value
             current = current.next
         if k == 0:
             return last_value
-        if k == (count - 1): # Where k is one less than the length of the list
+        if k == (node_count - 1): # Where k is one less than the length of the list
             return self.head.value
-        if k > (count - 1):
+        if k > (node_count - 1):
             raise TargetError(Exception("k is equal to or greater than the length of the linked list"))
         current = self.head
-        for i in range(count - (k + 1)): # +1 needed to account for range starting at 0
+        for i in range(node_count - (k + 1)): # +1 needed to account for range starting at 0
             current = current.next
         return current.value
 

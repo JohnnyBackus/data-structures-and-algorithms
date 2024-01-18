@@ -19,11 +19,11 @@ Extending an implementation of a linked list to find the kth value from the end 
 
 **What approach did you take? Why?**
 
->*Answer*
+>*TDD. I figured I would need to keep a count of the nodes in the linked-list and iterate to find the end. So I started there and then just started trying to make tests pass. It wasn't until I solved one of the last tests I attempted where I needed to store the value of the last node that I realized I probably could have stored all of the values as I iterated through the linked-list in a regular list or dictionary, but maybe that defeats the purpose of using a linked list and would have been inefficient use of memory.*
 
 **What is the Big O space/time for this approach?**
 
->*These methods have a space time complexity of O(n). The longer the linked list, the longer it will potentially take to reach the target insert or append location.  The insert methods have potential to be fast depending on where in the list the new value is to be inserted. The append method will always run through all values in the linked list to reach the end.*
+>*This method has a space time complexity of O(n + k). It will have to run through the entire linked list to find the end. Most of the time, it will have to partially run through it again up to the node at position (n - k).*
 
 ## Resources
 
