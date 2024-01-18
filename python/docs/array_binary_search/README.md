@@ -4,7 +4,7 @@ Write a function called BinarySearch which takes in 2 parameters: a sorted list 
 
 ## Whiteboard Process
 
-<![Whiteboard Solution](python/code_challenges/array_binary_search/cc03_whiteboard.jpg)
+<![Whiteboard Solution](cc03_whiteboard.jpg)
 
 ## Approach & Efficiency
 
