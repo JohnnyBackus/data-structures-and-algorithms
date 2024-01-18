@@ -1,6 +1,11 @@
 import pytest
 from data_structures.linked_list import LinkedList, TargetError
 
+# Where k is greater than the length of the linked list
+# Where k and the length of the list are the same
+# Where k is not a positive integer
+# Where the linked list is of a size 1
+# “Happy Path” where k is not at the end, but somewhere in the middle of the linked list
 
 @pytest.mark.skip("TODO")
 def test_kth_from_end_zero():

@@ -5,6 +5,7 @@ from linked_list.linked_list import LinkedList
 def test_exists():
     assert LinkedList
 
+
 #@pytest.mark.skip("TODO")
 def test_instantiate():
     assert LinkedList()

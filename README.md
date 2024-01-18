@@ -11,6 +11,7 @@ See [setup instructions](https://codefellows.github.io/setup-guide/code-301/2-co
 - [Array-Binary-Search](python/code_challenges/array_binary_search/README.md)
 - [Linked-List-Implementation](python/code_challenges/linked_list_implementation/README.md)
 - [Linked-List-Insertions](python/code_challenges/linked_list_insertions/README.md)
+- [Linked-List-Kth](python/docs/linked_list_kth/README.md)
 
 ## Repository Quick Tour and Usage
 
