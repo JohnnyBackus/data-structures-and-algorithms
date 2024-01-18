@@ -67,7 +67,7 @@ def test_insert_after_last_node():
 
     linked_list.insert_after("apple", "cucumber")
 
-    assert str(linked_list) == "{ banana } -> { cucumber } -> { apple } -> NULL"
+    assert str(linked_list) == "{ banana } -> { apple } -> { cucumber } -> NULL"
 
 
 @pytest.mark.skip("TODO")

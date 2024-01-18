@@ -4,7 +4,7 @@ Array-Reverse
 
 ## Whiteboard Process
 
-<![Whiteboard Solution](<Technical Diagrams.jpg>)
+<![Whiteboard Solution](<whiteboard.jpg>)
 
 ## Approach & Efficiency
 
