@@ -73,6 +73,49 @@ class LinkedList:
             current = current.next
         return current.value
 
+    def zip_lists(self, list_a, list_b):
+        new_list = LinkedList()
+        current_a = list_a.head
+        current_b = list_b.head
+        current_new = new_list.head
+
+        while current_a and current_b:
+            if not current_new:
+                new_node = Node(current_a.value)
+                new_list.head = new_node
+                current_new = new_list.head
+                current_a = current_a.next
+            else:
+                current_new.next = Node(current_b.value)
+                current_b = current_b.next
+                current_new = current_new.next
+                current_new.next = Node(current_a.value)
+                current_a = current_a.next
+                current_new = current_new.next
+
+        while current_a:
+            if not current_new:
+                new_node = Node(current_a.value)
+                new_list.head = new_node
+                current_new = new_list.head
+                current_a = current_a.next
+            else:
+                current_new.next = Node(current_a.value)
+                current_a = current_a.next
+                current_new = current_new.next
+
+        while current_b:
+            if not current_new:
+                new_node = Node(current_b.value)
+                new_list.head = new_node
+                current_new = new_list.head
+                current_b = current_b.next
+            else:
+                current_new.next = Node(current_b.value)
+                current_b = current_b.next
+                current_new = current_new.next
+        return new_list
+
     def __str__(self):
         output = ''
         current = self.head
@@ -82,7 +125,14 @@ class LinkedList:
         output += 'NULL'
         return output
 
+
+class TargetError(BaseException):
+    pass
+
 # ------------ Code below was used to help me visualize node and linked list ------------
+
+if __name__ == "__main__":
+
 
 # Node("apple")
 # Node("banana")
@@ -98,6 +148,68 @@ class LinkedList:
 
 # string_double()
 
+# equal length linked lists
+    list_a = LinkedList()
+    for value in reversed([1, 2, 3]):
+        list_a.insert(value)
 
-class TargetError(BaseException):
-    pass
+    list_b = LinkedList()
+    for value in reversed(["a", "b", "c"]):
+        list_b.insert(value)
+
+    print("list_a:", list_a)
+    print("list_b:", list_b)
+
+    list_c = LinkedList()
+    print("list_c:", list_c.zip_lists(list_a, list_b))
+
+# list_a shorter
+    list_a = LinkedList()
+    for value in reversed([1, 2]):
+        list_a.insert(value)
+
+    list_b = LinkedList()
+    for value in reversed(["a", "b", "c"]):
+        list_b.insert(value)
+
+    list_c = LinkedList()
+    print("list_a:", list_a)
+    print("list_b:", list_b)
+    print("list_c:", list_c.zip_lists(list_a, list_b))
+
+# list_b shorter
+    list_a = LinkedList()
+    for value in reversed([1, 2, 3]):
+        list_a.insert(value)
+
+    list_b = LinkedList()
+    for value in reversed(["a", "b"]):
+        list_b.insert(value)
+
+    list_c = LinkedList()
+    print("list_a:", list_a)
+    print("list_b:", list_b)
+    print("list_c:", list_c.zip_lists(list_a, list_b))
+
+# list_a empty
+    list_a = LinkedList()
+
+    list_b = LinkedList()
+    for value in reversed(["a", "b", "c"]):
+        list_b.insert(value)
+
+    list_c = LinkedList()
+    print("list_a:", list_a)
+    print("list_b:", list_b)
+    print("list_c:", list_c.zip_lists(list_a, list_b))
+
+# list_b empty
+    list_a = LinkedList()
+    for value in reversed([1, 2, 3]):
+        list_a.insert(value)
+    list_b = LinkedList()
+
+    list_c = LinkedList()
+    print("list_a:", list_a)
+    print("list_b:", list_b)
+    print("list_c:", list_c.zip_lists(list_a, list_b))
