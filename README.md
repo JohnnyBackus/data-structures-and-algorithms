@@ -13,6 +13,7 @@ See [setup instructions](https://codefellows.github.io/setup-guide/code-301/2-co
 - [Linked-List-Insertions](python/docs/linked_list_insertions/README.md)
 - [Linked-List-Kth](python/docs/linked_list_kth/README.md)
 - [Linked-List-Zip](python/docs/linked_list_zip/README.md)
+- [Stack-And-Queue](python/doc/stack_and_queue/README.md)
 
 ## Repository Quick Tour and Usage
 
