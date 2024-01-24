@@ -15,6 +15,7 @@ See [setup instructions](https://codefellows.github.io/setup-guide/code-301/2-co
 - [Linked-List-Zip](python/docs/linked_list_zip/README.md)
 - [Stack-And-Queue](python/docs/stack_and_queue/README.md)
 - [Stack-Queue-Pseudo](python/docs/stack-queue-pseudo/README.md)
+- [Stack-Queue-Animal-Shelter](python/docs/stack-queue-animal-shelter/README.md)
 
 ## Repository Quick Tour and Usage
 
