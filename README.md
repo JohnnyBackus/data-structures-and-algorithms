@@ -17,6 +17,7 @@ See [setup instructions](https://codefellows.github.io/setup-guide/code-301/2-co
 - [Stack-Queue-Pseudo](python/docs/stack-queue-pseudo/README.md)
 - [Stack-Queue-Animal-Shelter](python/docs/stack-queue-animal-shelter/README.md)
 - [Stack-Queue-Brackets](python/docs/stack-queue-brackets/README.md)
+- [Binary-Trees](python/docs/trees/README.md)
 
 ## Repository Quick Tour and Usage
 
