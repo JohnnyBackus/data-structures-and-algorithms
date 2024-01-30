@@ -1,44 +1,34 @@
 # Tree-Max
 
-Implementing a new Tree and Binary Search Tree
+Find the Maximum Value in a Binary Tree
 
 ## Features
 
-- Node
-  - Create a Node class that has properties for the value stored in the node, the left child node, and the right child node.
+Write the following method for the Binary Tree class
 
-- Binary Tree
-  - Create a Binary Tree class
-    - Define a method for each of the depth first traversals:
-      - pre order
-      - in order
-      - post order
-  - Each depth first traversal method should return an array of values, ordered appropriately.
-
-- Binary Search Tree
-  - Create a Binary Search Tree class
-    - This class should be a sub-class (or your languages equivalent) of the Binary Tree Class, with the following additional methods:
-    - Add
-      - Arguments: value
-      - Return: nothing
-      - Adds a new node with that value in the correct location in the binary search tree.
-    - Contains
-      - Argument: value
-      - Returns: boolean indicating whether or not the value is in the tree at least once.
+- find maximum value
+  - Arguments: none
+  - Returns: number
+  - Finds the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
 
 ## Whiteboard Process
 
-- not applicable for this code challenge
+- not completed
 
 ## Approach & Efficiency
 
 **What approach did you take? Why?**
 
->*not applicable*
+>*Use recursion of a traverse method in a way similar to how it was used for the pre-order, post-order, and in-order methods*
+
+- I need to store max value
+  - this could be stored as a global variable, but then would be out of scope if used in the traverse method
+  - better to store inside traverse method
+  - can pass max_value as parameter of traverse method
 
 **What is the Big O space/time for this approach?**
 
->*The "contains" method in the BinarySearchTree class will be Big O(n)*
+>*This method will be Big O(n)*
 
 ## Resources
 
@@ -47,95 +37,17 @@ Implementing a new Tree and Binary Search Tree
 ## Solution
 
 ```
-class BinaryTree:
+def find_maximum_value(self):
 
-    def __init__(self, root=None):
-        self.root = root
+  def traverse(node, val):
+    max_val = val
+    if node.value > max_val:
+        max_val = node.value
+    if node.left:
+        return traverse(node.left, max_val)
+    elif node.right:
+        return traverse(node.right, max_val)
+    return max_val
 
-    def pre_order(self):
-
-        def traverse(node):
-            own_value = [node.value] if node else []
-            left_value = traverse(node.left) if node.left else []
-            right_value = traverse(node.right) if node.right else []
-            return own_value + left_value + right_value
-
-        return traverse(self.root)
-
-    def in_order(self):
-
-        def traverse(node):
-            own_value = [node.value] if node else []
-            left_value = traverse(node.left) if node.left else []
-            right_value = traverse(node.right) if node.right else []
-            return left_value + own_value + right_value
-
-        return traverse(self.root)
-
-    def post_order(self):
-
-        def traverse(node):
-            own_value = [node.value] if node else []
-            left_value = traverse(node.left) if node.left else []
-            right_value = traverse(node.right) if node.right else []
-            return left_value + right_value + own_value
-
-        return traverse(self.root)
-
-
-class BinarySearchTree(BinaryTree):
-  # don't need __init__ if not changing anything from super class
-
-    def add(self, value):
-        node = Node(value)
-        if self.root is None:
-            self.root = node
-            return
-
-        def traverse(node, new_node):
-            if new_node.value < node.value:
-                if node.left is None:
-                    node.left = new_node
-                    return
-                else:
-                    traverse(node.left, new_node)
-            elif new_node.value > node.value:
-                if node.right is None:
-                    node.right = new_node
-                else:
-                    traverse(node.right, new_node)
-
-        return traverse(self.root, node)
-
-
-    def contains(self, value):
-        if self.root is None:
-            raise TargetError(Exception("Tree is empty"))
-
-        def traverse(node, value):
-            if value == node.value:
-                return True
-            if value < node.value:
-                if node.left is None:
-                    return False
-                else:
-                    return traverse(node.left, value)  # Add return statement
-            elif value > node.value:
-                if node.right is None:
-                    return False
-                else:
-                    return traverse(node.right, value)  # Add return statement
-
-        return traverse(self.root, value)
-
-
-class Node:
-    def __init__(self, value):
-        self.value = value
-        self.left = None
-        self.right = None
-
-
-class TargetError(BaseException):
-    pass
+  return traverse(self.root, self.root.value)
 ```
