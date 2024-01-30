@@ -33,6 +33,19 @@ class BinaryTree:
 
         return traverse(self.root)
 
+    def find_maximum_value(self):
+
+        def traverse(node, val):
+            max_val = val
+            if node.value > max_val:
+                max_val = node.value
+            if node.left:
+                return traverse(node.left, max_val)
+            elif node.right:
+                return traverse(node.right, max_val)
+            return max_val
+
+        return traverse(self.root, self.root.value)
 
 class Node:
     def __init__(self, value):
