@@ -35,17 +35,31 @@ Breadth-first Traversal
 ## Solution
 
 ```
-def find_maximum_value(self):
+def breadth_first(tree):
+  staging = []
+  node_list = []
 
-  def traverse(node, val):
-    max_val = val
-    if node.value > max_val:
-        max_val = node.value
+  if tree.root == None:
+      return []
+
+  staging.append(tree.root)
+
+  def traverse_tree(node):
     if node.left:
-        return traverse(node.left, max_val)
-    elif node.right:
-        return traverse(node.right, max_val)
-    return max_val
+      new_node = node.left
+      staging.append(new_node)
+    if node.right:
+      new_node = node.right
+      staging.append(new_node)
+    check_staging()
 
-  return traverse(self.root, self.root.value)
+  def check_staging():
+    while staging:
+      dequeued_node = staging.pop(0)
+      node_list.append(dequeued_node.value)
+      traverse_tree(dequeued_node)
+
+check_staging()
+
+return node_list
 ```
