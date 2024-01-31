@@ -24,7 +24,9 @@ class Queue:
         '''Removes the node from the front of the queue and returns the node's value'''
         if self.front:
             value = self.front.value
-            self.front = self.front.next # reassign front to the next node so front will no longer be referencing anything in the queue
+            self.front = self.front.next
+            if self.front is None:
+                self.back = None # reassign front to the next node so front will no longer be referencing anything in the queue
             return value
         else:
             raise InvalidOperationError() # if queue is empty, raise error
