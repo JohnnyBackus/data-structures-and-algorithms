@@ -1,34 +1,32 @@
-# Tree-Max
+# Tree-Breadth-First
 
-Find the Maximum Value in a Binary Tree
+Breadth-first Traversal
 
 ## Features
 
-Write the following method for the Binary Tree class
-
-- find maximum value
-  - Arguments: none
-  - Returns: number
-  - Finds the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
+- Write a function called breadth first
+  - Arguments: tree
+  - Return: list of all values in the tree, in the order they were encountered
+  Traverse the input tree using a Breadth-first approach
 
 ## Whiteboard Process
 
-- not completed
+- [Whiteboard](cc17whiteboard.png)
 
 ## Approach & Efficiency
 
 **What approach did you take? Why?**
 
->*Use recursion of a traverse method in a way similar to how it was used for the pre-order, post-order, and in-order methods*
+>*As visualized during lecture, I wanted to use a queue to store copies of nodes as the tree is traversed.*
 
-- I need to store max value
-  - this could be stored as a global variable, but then would be out of scope if used in the traverse method
-  - better to store inside traverse method
-  - can pass max_value as parameter of traverse method
+- I need to store the value of the node at the front of the queue before dequeing
+  - this could be stored in a list that will be returned when the function is done running
+- Also need to check the left and right pointers and enqueue those nodes in order if present
+- Repeat
 
 **What is the Big O space/time for this approach?**
 
->*This method will be Big O(n)*
+>*This method will have both a space and time complexity Big O(n). The method will iterate through every node in the tree once and store a value for each node.*
 
 ## Resources
 
