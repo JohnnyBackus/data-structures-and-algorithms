@@ -5,13 +5,13 @@ from data_structures.queue import Queue
 ### Solution works with list. Changed enqueue methods to append and dequeue methods to pop(0)###
 
 def breadth_first(tree):
-    staging = []
+    staging = Queue()
     node_list = []
 
     if tree.root == None:
         return []
 
-    staging.append(tree.root)
+    staging.enqueue(tree.root)
     # print("tree.root:", tree.root)
 
     def traverse_tree(node):
@@ -21,20 +21,20 @@ def breadth_first(tree):
             new_node = node.left
             # print("node.left:", node.left)
             # print("node.left.value:", node.left.value)
-            staging.append(new_node)
+            staging.enqueue(new_node)
             # print("staging.peek().value:", staging.peek().value)
         if node.right:
             new_node = node.right
-            staging.append(new_node)
+            staging.enqueue(new_node)
         check_staging()
 
 
     def check_staging():
         # nonlocal staging
         # nonlocal node_list
-        while staging:
+        while not staging.is_empty():
             # print("staging.peek().value:", staging.peek().value)
-            dequeued_node = staging.pop(0)
+            dequeued_node = staging.dequeue()
             node_list.append(dequeued_node.value)
             traverse_tree(dequeued_node)
 
