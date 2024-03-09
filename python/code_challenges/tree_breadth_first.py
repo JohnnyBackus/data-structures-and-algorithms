@@ -1,8 +1,7 @@
 from data_structures.binary_tree import BinaryTree, Node as Tree_Node
 from data_structures.queue import Queue
 
-### Unable to get solution to work with Queue class. Unable to enqueue node.left or node.right. ###
-### Solution works with list. Changed enqueue methods to append and dequeue methods to pop(0)###
+### Fixed Queue dequeue method so this function works now. Need to refactor.
 
 def breadth_first(tree):
     staging = Queue()
